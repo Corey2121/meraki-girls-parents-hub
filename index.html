@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meraki Girls Parents Hub | 2026–2027</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --accent: #f59e0b;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --radius: 12px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+    body { background-color: var(--bg); color: var(--text); padding: 1.5rem 1rem 4rem; line-height: 1.5; }
+    .container { max-width: 900px; margin: 0 auto; }
+
+    header { text-align: center; margin-bottom: 1.5rem; }
+    header h1 { font-size: 1.75rem; color: var(--primary); font-weight: 800; }
+    header p { color: var(--text-muted); font-size: 0.95rem; margin-top: 0.25rem; }
+
+    .spectator-banner {
+      background: linear-gradient(135deg, #1e3a8a, #2563eb);
+      color: #fff;
+      padding: 0.85rem 1.1rem;
+      border-radius: var(--radius);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+      transition: all 0.2s ease;
+    }
+    .spectator-banner span { font-size: 0.9rem; opacity: 0.95; font-weight: 500; }
+    .code-container { display: flex; align-items: center; gap: 0.5rem; }
+    .spectator-banner code {
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 1px;
+      background: rgba(255,255,255,0.22);
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      cursor: pointer;
+      user-select: all;
+    }
+    .spectator-banner code:hover { background: rgba(255,255,255,0.32); }
+    .copy-tip { font-size: 0.72rem; opacity: 0.8; }
+
+    .controls { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem; }
+    .search-box {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      outline: none;
+      background: #fff;
+    }
+    .search-box:focus { border-color: var(--primary-light); box-shadow: 0 0 0 3px rgba(59,130,246,0.15); }
+
+    .team-pills { display: flex; gap: 0.5rem; overflow-x: auto; padding-bottom: 4px; }
+    .pill {
+      background: #fff;
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.45rem 0.9rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .pill.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+    .tournament-grid { display: flex; flex-direction: column; gap: 1rem; }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+
+    .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; }
+    .card-title { font-size: 1.15rem; font-weight: 700; color: var(--primary); }
+    .team-tag { font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 4px; background: #e0e7ff; color: #3730a3; }
+
+    .meta-row { display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem; }
+    .meta-item { display: flex; align-items: center; gap: 0.25rem; font-weight: 500; }
+
+    .notes-box {
+      font-size: 0.8rem;
+      background: #f1f5f9;
+      color: #475569;
+      padding: 0.4rem 0.6rem;
+      border-radius: 6px;
+      margin-bottom: 0.9rem;
+      display: inline-block;
+    }
+
+    .btn-group { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.5rem; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.45rem 0.8rem;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .btn-maps { background: #fee2e2; color: #991b1b; }
+    .btn-maps:hover { background: #fecaca; }
+    .btn-hotel { background: #ecfdf5; color: #065f46; }
+    .btn-hotel:hover { background: #d1fae5; }
+    .btn-site { background: #eff6ff; color: #1e40af; }
+    .btn-site:hover { background: #dbeafe; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Meraki Girls Parents Hub</h1>
+      <p>Tournament schedules, hotels, locations, and spectator codes for 2026–2027</p>
+    </header>
+
+    <!-- Dynamic Spectator Banner -->
+    <div class="spectator-banner" id="spectatorBanner">
+      <div>
+        <span id="spectatorLabel">Spectator Code:</span>
+        <div class="copy-tip" id="copyTip">Click code to copy</div>
+      </div>
+      <div class="code-container">
+        <code id="spectatorCode" title="Click to copy" onclick="copySpectatorCode()">Select a team</code>
+      </div>
+    </div>
+
+    <div class="controls">
+      <input type="text" id="searchInput" class="search-box" placeholder="🔍 Search tournaments or cities..." />
+      <div class="team-pills">
+        <button class="pill active" onclick="setTeam('All')">All Teams</button>
+        <button class="pill" onclick="setTeam('Girls 12-1')">Girls 12-1</button>
+        <button class="pill" onclick="setTeam('Girls 13-1')">Girls 13-1</button>
+        <button class="pill" onclick="setTeam('Girls 14-1')">Girls 14-1</button>
+        <button class="pill" onclick="setTeam('Girls 14-2')">Girls 14-2</button>
+        <button class="pill" onclick="setTeam('Girls 15-1')">Girls 15-1</button>
+        <button class="pill" onclick="setTeam('Girls 15-2')">Girls 15-2</button>
+        <button class="pill" onclick="setTeam('Girls 17-1')">Girls 17-1</button>
+        <button class="pill" onclick="setTeam('Girls 17-2')">Girls 17-2</button>
+      </div>
+    </div>
+
+    <div class="tournament-grid" id="tournamentList"></div>
+  </div>
+
+  <script>
+    // Spectator codes extracted directly from each team sheet
+    const spectatorCodes = {
+      "Girls 12-1": "G12MVNER1NE",
+      "Girls 13-1": "G13MVNER1NE",
+      "Girls 14-1": "G14MVNER1NE",
+      "Girls 14-2": "G14MVNER2NE",
+      "Girls 15-1": "G15MVNER1NE",
+      "Girls 15-2": "G15MVNER2NE",
+      "Girls 17-1": "G17MVNER1NE",
+      "Girls 17-2": "G17MVNER2NE"
+    };
+
+    const tournaments = [
+      // Girls 12-1
+      { team: "Girls 12-1", name: "NERVA # 1", date: "2/7/2026", location: "TBD until Wed before", maps: "", hotel: "", site: "https://nevolleyball.org/junior-girls-info-schedule/", notes: "" },
+      { team: "Girls 12-1", name: "NERVA # 2", date: "3/7/2026", location: "", maps: "", hotel: "", site: "https://nevolleyball.org/junior-girls-info-schedule/", notes: "" },
+      { team: "Girls 12-1", name: "NERVA # 3", date: "3/21/2026", location: "", maps: "", hotel: "", site: "https://nevolleyball.org/junior-girls-info-schedule/", notes: "" },
+      { team: "Girls 12-1", name: "NERVA # 4", date: "4/11/2026", location: "", maps: "", hotel: "", site: "https://nevolleyball.org/junior-girls-info-schedule/", notes: "" },
+      { team: "Girls 12-1", name: "NERVA # 5", date: "4/25/2026", location: "", maps: "", hotel: "", site: "https://nevolleyball.org/junior-girls-info-schedule/", notes: "" },
+
+      // Girls 13-1
+      { team: "Girls 13-1", name: "Wicked Good", date: "12/19-20", location: "Providence, RI", maps: "https://maps.app.goo.gl/pL1ga8Tdvg2uNdVv7", hotel: "", site: "https://jvctournaments.com/WickedGoodChallenge/", notes: "STAY TO PLAY | Passcode: THS-604017" },
+      { team: "Girls 13-1", name: "NERVA # 1", date: "2/7/2026", location: "TBD until Wed Before", maps: "", hotel: "", site: "https://nevolleyball.org/junior-girls-info-schedule/", notes: "*hotel not needed*" },
+      { team: "Girls 13-1", name: "Boston National Qualifier", date: "2/19-21", location: "Boston, MA", maps: "https://maps.app.goo.gl/wsfKWsVyHyhw5jpj6", hotel: "", site: "https://jvctournaments.com/Boston_National_Q/", notes: "*hotel not needed*" },
+      { team: "Girls 13-1", name: "NERVA # 2", date: "3/7/2026", location: "", maps: "", hotel: "", site: "", notes: "*hotel not needed*" },
+      { team: "Girls 13-1", name: "NERVA # 3", date: "3/21/2026", location: "", maps: "", hotel: "", site: "", notes: "*hotel not needed*" },
+      { team: "Girls 13-1", name: "NERVA # 4", date: "4/11/2026", location: "", maps: "", hotel: "", site: "", notes: "*hotel not needed*" },
+      { team: "Girls 13-1", name: "NERVA # 5", date: "4/25/2026", location: "", maps: "", hotel: "", site: "", notes: "*hotel not needed*" },
+      { team: "Girls 13-1", name: "North Atlantic Qualifier", date: "5/1-2", location: "Hartford, CT", maps: "https://maps.app.goo.gl/n7J9bVK3XZQFRTCQ9", hotel: "https://portal.thsweb.com/reservations/access/01m76679mzd1knz4a359nzybm6", site: "https://jvctournaments.com/NorthAtlanticChampionships/", notes: "STAY TO PLAY | Passcode: THS-617045" },
+
+      // Girls 14-1
+      { team: "Girls 14-1", name: "Home for the Holidays", date: "12/12-13", location: "Fitchburg, MA", maps: "https://maps.app.goo.gl/9wogDgLnYg42nmxE9", hotel: "", site: "https://www.neaauvolleyball.org/home-for-the-holidays-girls", notes: "*hotel not needed*" },
+      { team: "Girls 14-1", name: "Champs League # 1", date: "1/23 or 1/24", location: "Fitchburg, Hanover, or Millworks", maps: "", hotel: "", site: "https://www.neaauvolleyball.org/champions-league", notes: "*hotel not needed*" },
+      { team: "Girls 14-1", name: "Boston National Qualifier", date: "2/19-21", location: "Boston, MA", maps: "https://maps.app.goo.gl/wsfKWsVyHyhw5jpj6", hotel: "", site: "https://jvctournaments.com/Boston_National_Q/", notes: "*hotel not needed*" },
+      { team: "Girls 14-1", name: "Champs League # 2", date: "3/6 or 3/7", location: "Fitchburg, Hanover, or Millworks", maps: "", hotel: "", site: "", notes: "*hotel not needed*" },
+      { team: "Girls 14-1", name: "Spring Kick-off", date: "3/21-22", location: "Fitchburg, Hanover, Mill, Smith College", maps: "", hotel: "", site: "https://www.neaauvolleyball.org/spring-kick-off", notes: "*hotel not needed unless at smith, but i believe they removed it as a location*" },
+      { team: "Girls 14-1", name: "Champs League # 3", date: "4/3 or 4/4", location: "Fitchburg, Hanover, or Millworks", maps: "", hotel: "", site: "", notes: "*hotel not needed*" },
+      { team: "Girls 14-1", name: "Rhode Island Rumble", date: "4/17-18", location: "Providence, RI", maps: "https://maps.app.goo.gl/pL1ga8Tdvg2uNdVv7", hotel: "*have two rooms available rn that I can transfer to someone; waiting for more hotels to open for a bigger block*", site: "https://jvctournaments.com/RhodeIslandRumble/", notes: "STAY TO PLAY | Passcode: THS-617070" },
+      { team: "Girls 14-1", name: "Champs League # 4", date: "4/24-25", location: "Fitchburg, Hanover, or Millworks", maps: "", hotel: "", site: "", notes: "this weekend OR the following" },
+      { team: "Girls 14-1", name: "Champs League # 5", date: "5/1-2", location: "Fitchburg, Hanover, or Millworks", maps: "", hotel: "", site: "", notes: "*hotel not needed*" },
+
+      // Girls 14-2
+      { team: "Girls 14-2", name: "Home for the Holidays", date: "12/12-13", location: "Fitchburg, MA", maps: "https://maps.app.goo.gl/9wogDgLnYg42nmxE9", hotel: "", site: "https://www.neaauvolleyball.org/home-for-the-holidays-girls", notes: "*hotel not needed*" },
+      { team: "Girls 14-2", name: "Champs League #1", date: "1/23 or 1/24", location: "Fitchburg, Hanover, or Millworks", maps: "", hotel: "", site: "https://www.neaauvolleyball.org/champions-league", notes: "*hotel not needed*" },
+      { team: "Girls 14-2", name: "Boston National Qualifier", date: "2/19-21", location: "Boston, MA", maps: "https://maps.app.goo.gl/wsfKWsVyHyhw5jpj6", hotel: "", site: "https://jvctournaments.com/Boston_National_Q/", notes: "*hotel not needed*" },
+      { team: "Girls 14-2", name: "Champs League #2", date: "3/6 or 3/7", location: "Fitchburg, Hanover, or Millworks", maps: "", hotel: "", site: "", notes: "*hotel not needed*" },
+      { team: "Girls 14-2", name: "Champs League #3", date: "4/3 or 4/4", location: "Fitchburg, Hanover, or Millworks", maps: "", hotel: "", site: "", notes: "*hotel not needed*" },
+      { team: "Girls 14-2", name: "Champs League #4", date: "4/24-25", location: "Fitchburg, Hanover, or Millworks", maps: "", hotel: "", site: "", notes: "*hotel not needed* THIS WEEKEND OR THE NEXT" },
+      { team: "Girls 14-2", name: "Champs League #5", date: "5/1-2", location: "Fitchburg, Hanover, or Millworks", maps: "", hotel: "", site: "", notes: "*hotel not needed*" },
+
+      // Girls 15-1
+      { team: "Girls 15-1", name: "Home for the Holidays", date: "12/12-13", location: "Fitchburg, MA", maps: "https://maps.app.goo.gl/9wogDgLnYg42nmxE9", hotel: "", site: "https://www.neaauvolleyball.org/home-for-the-holidays-girls", notes: "*hotel not needed*" },
+      { team: "Girls 15-1", name: "Champs League #1", date: "1/23 or 1/24", location: "Fitchburg, Hanover, or Millworks", maps: "", hotel: "", site: "https://www.neaauvolleyball.org/champions-league", notes: "*hotel not needed*" },
+      { team: "Girls 15-1", name: "Grand Prix", date: "1/30-31", location: "Millworks", maps: "https://maps.app.goo.gl/P6n8F4TcrC9u1APCA", hotel: "", site: "https://www.neaauvolleyball.org/grand-prix-weekend", notes: "*hotel not needed*" },
+      { team: "Girls 15-1", name: "Boston National Qualifier", date: "2/19-21", location: "Boston, MA", maps: "https://maps.app.goo.gl/wsfKWsVyHyhw5jpj6", hotel: "", site: "https://jvctournaments.com/Boston_National_Q/", notes: "*hotel not needed*" },
+      { team: "Girls 15-1", name: "Northeast Qualifier #2", date: "3/26-28", location: "Philidelphia, PA", maps: "https://maps.app.goo.gl/Wg66DJbtvXVyUSiK7", hotel: "OPEN NOV 23", site: "https://neqvolleyball.com/neq2/", notes: "STAY TO PLAY" },
+      { team: "Girls 15-1", name: "Champs League #2", date: "3/6 or 3/7", location: "Fitchburg, Hanover, or Millworks", maps: "", hotel: "", site: "", notes: "*hotel not needed*" },
+      { team: "Girls 15-1", name: "Champs League #3", date: "4/3 or 4/4", location: "Fitchburg, Hanover, or Millworks", maps: "", hotel: "", site: "", notes: "*hotel not needed*" },
+      { team: "Girls 15-1", name: "Champs League #4", date: "4/24-25", location: "Fitchburg, Hanover, or Millworks", maps: "", hotel: "", site: "", notes: "THIS WEEKEND OR THE NEXT" },
+      { team: "Girls 15-1", name: "Champs League #5", date: "5/1-2", location: "Fitchburg, Hanover, or Millworks", maps: "", hotel: "", site: "", notes: "*hotel not needed*" },
+      { team: "Girls 15-1", name: "Fun @ Sun Super Regional", date: "5/29-31", location: "Mohegan Sun, CT", maps: "https://maps.app.goo.gl/GEe1hsmi4yQh5u9AA", hotel: "https://app.eventconnect.io/events/47186/hotels?registration=2384503", site: "https://www.neaauvolleyball.org/fun-at-the-sun", notes: "*not stay to play*" },
+
+      // Girls 15-2
+      { team: "Girls 15-2", name: "NERVA # 1", date: "2/7/2026", location: "TBD until Wed before", maps: "", hotel: "", site: "https://nevolleyball.org/junior-girls-info-schedule/", notes: "*hotel not needed*" },
+      { team: "Girls 15-2", name: "NERVA # 2", date: "3/7/2026", location: "", maps: "", hotel: "", site: "https://nevolleyball.org/junior-girls-info-schedule/", notes: "*hotel not needed*" },
+      { team: "Girls 15-2", name: "NERVA # 3", date: "3/21/2026", location: "", maps: "", hotel: "", site: "https://nevolleyball.org/junior-girls-info-schedule/", notes: "*hotel not needed*" },
+      { team: "Girls 15-2", name: "NERVA # 4", date: "4/11/2026", location: "", maps: "", hotel: "", site: "https://nevolleyball.org/junior-girls-info-schedule/", notes: "*hotel not needed*" },
+      { team: "Girls 15-2", name: "NERVA # 5", date: "4/25/2026", location: "", maps: "", hotel: "", site: "https://nevolleyball.org/junior-girls-info-schedule/", notes: "*hotel not needed*" },
+
+      // Girls 17-1
+      { team: "Girls 17-1", name: "Wicked Good", date: "12/19-20", location: "Providence, RI", maps: "https://maps.app.goo.gl/pL1ga8Tdvg2uNdVv7", hotel: "", site: "https://jvctournaments.com/WickedGoodChallenge/", notes: "STAY TO PLAY | Passcode: THS-604240" },
+      { team: "Girls 17-1", name: "Champs League # 1", date: "1/23 or 1/24", location: "Fitchburg, Hanover, or Millworks", maps: "", hotel: "", site: "https://www.neaauvolleyball.org/champions-league", notes: "*hotel not needed*" },
+      { team: "Girls 17-1", name: "Grand Prix", date: "2/6-7", location: "Mohegan Sun, CT", maps: "https://maps.app.goo.gl/8irGbcQgTyiPQ6hg9", hotel: "https://app.eventconnect.io/events/47184/hotels?registration=2384410", site: "https://www.neaauvolleyball.org/grand-prix-weekend", notes: "*not stay to play*" },
+      { team: "Girls 17-1", name: "Boston National Qualifier", date: "2/26-28", location: "Boston, MA", maps: "https://maps.app.goo.gl/wsfKWsVyHyhw5jpj6", hotel: "", site: "https://jvctournaments.com/Boston_National_Q/", notes: "*hotel not needed*" },
+      { team: "Girls 17-1", name: "Champs League #2", date: "3/6 or 3/7", location: "Fitchburg, Hanover, or Millworks", maps: "", hotel: "", site: "", notes: "*hotel not needed*" },
+      { team: "Girls 17-1", name: "Champs League #3", date: "4/3 or 4/4", location: "Fitchburg, Hanover, or Millworks", maps: "", hotel: "", site: "", notes: "*hotel not needed*" },
+      { team: "Girls 17-1", name: "Northeast Qualifier #4", date: "4/23-25", location: "Philidelphia, PA", maps: "https://maps.app.goo.gl/Wg66DJbtvXVyUSiK7", hotel: "OPEN NOV 23", site: "https://neqvolleyball.com/neq4/", notes: "STAY TO PLAY" },
+      { team: "Girls 17-1", name: "Champs League #4", date: "4/24-25", location: "Fitchburg, Hanover, or Millworks", maps: "", hotel: "", site: "", notes: "*hotel not needed*" },
+      { team: "Girls 17-1", name: "Champs League #5", date: "5/1-2", location: "Fitchburg, Hanover, or Millworks", maps: "", hotel: "", site: "", notes: "*hotel not needed*" },
+      { team: "Girls 17-1", name: "Fun @ Sun Super Regional", date: "5/29-31", location: "Mohegan Sun, CT", maps: "https://maps.app.goo.gl/GEe1hsmi4yQh5u9AA", hotel: "https://app.eventconnect.io/events/47186/hotels?registration=2384503", site: "https://www.neaauvolleyball.org/fun-at-the-sun", notes: "*not stay to play*" },
+
+      // Girls 17-2
+      { team: "Girls 17-2", name: "Home for the Holidays", date: "12/5-6", location: "Fitchburg, MA", maps: "https://maps.app.goo.gl/9wogDgLnYg42nmxE9", hotel: "", site: "https://www.neaauvolleyball.org/home-for-the-holidays-girls", notes: "*hotel not needed*" },
+      { team: "Girls 17-2", name: "Champs League #1", date: "1/23 or 1/24", location: "Fitchburg, Hanover, or Millworks", maps: "", hotel: "", site: "https://www.neaauvolleyball.org/champions-league", notes: "*hotel not needed*" },
+      { team: "Girls 17-2", name: "Boston National Qualifier", date: "2/26-28", location: "Boston, MA", maps: "https://maps.app.goo.gl/wsfKWsVyHyhw5jpj6", hotel: "", site: "https://jvctournaments.com/Boston_National_Q/", notes: "*hotel not needed*" },
+      { team: "Girls 17-2", name: "Champs League #2", date: "3/6 or 3/7", location: "Fitchburg, Hanover, or Millworks", maps: "", hotel: "", site: "", notes: "*hotel not needed*" },
+      { team: "Girls 17-2", name: "Shamrock Showdown", date: "3/13-14", location: "Hanover, MA", maps: "https://maps.app.goo.gl/CSftsXzgN5aBUY4RA", hotel: "", site: "https://www.neaauvolleyball.org/shamrock-showdown", notes: "*hotel not needed*" },
+      { team: "Girls 17-2", name: "Champs League #3", date: "4/3 or 4/4", location: "Fitchburg, Hanover, or Millworks", maps: "", hotel: "", site: "", notes: "*hotel not needed*" },
+      { team: "Girls 17-2", name: "Rhode Island Rumble", date: "4/24-25", location: "Providence, RI", maps: "https://maps.app.goo.gl/pL1ga8Tdvg2uNdVv7", hotel: "https://portal.thsweb.com/reservations/access/01m767cdcbdfxht42v9az03p22", site: "https://jvctournaments.com/RhodeIslandRumble/", notes: "STAY TO PLAY | Passcode: THS-617064" },
+      { team: "Girls 17-2", name: "Champs League #4", date: "4/24-25", location: "Fitchburg, Hanover, or Millworks", maps: "", hotel: "", site: "", notes: "*hotel not needed*" },
+      { team: "Girls 17-2", name: "Champs League #5", date: "5/1-2", location: "Fitchburg, Hanover, or Millworks", maps: "", hotel: "", site: "", notes: "*hotel not needed*" }
+    ];
+
+    let currentTeam = "All";
+    let searchQuery = "";
+
+    function setTeam(team) {
+      currentTeam = team;
+      document.querySelectorAll(".pill").forEach(el => {
+        el.classList.toggle("active", el.textContent.trim() === team || (team === "All" && el.textContent.trim() === "All Teams"));
+      });
+      updateSpectatorBanner();
+      render();
+    }
+
+    function updateSpectatorBanner() {
+      const label = document.getElementById("spectatorLabel");
+      const code = document.getElementById("spectatorCode");
+      const tip = document.getElementById("copyTip");
+
+      if (currentTeam === "All") {
+        label.textContent = "Spectator Code:";
+        code.textContent = "Select a team above";
+        tip.textContent = "Filter by team to view code";
+      } else {
+        label.textContent = `Spectator Code (${currentTeam}):`;
+        code.textContent = spectatorCodes[currentTeam] || "None listed";
+        tip.textContent = "Click code to copy";
+      }
+    }
+
+    function copySpectatorCode() {
+      const code = document.getElementById("spectatorCode").textContent.trim();
+      if (code && !code.includes("Select")) {
+        navigator.clipboard.writeText(code).then(() => {
+          const tip = document.getElementById("copyTip");
+          const oldText = tip.textContent;
+          tip.textContent = "✓ Copied to clipboard!";
+          setTimeout(() => { tip.textContent = oldText; }, 1800);
+        });
+      }
+    }
+
+    document.getElementById("searchInput").addEventListener("input", (e) => {
+      searchQuery = e.target.value.toLowerCase();
+      render();
+    });
+
+    function render() {
+      const container = document.getElementById("tournamentList");
+      container.innerHTML = "";
+
+      const filtered = tournaments.filter(t => {
+        const matchesTeam = currentTeam === "All" || t.team === currentTeam;
+        const matchesSearch = t.name.toLowerCase().includes(searchQuery) || t.location.toLowerCase().includes(searchQuery);
+        return matchesTeam && matchesSearch;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `<p style="text-align:center; color:#94a3b8; padding: 2rem;">No tournaments found.</p>`;
+        return;
+      }
+
+      filtered.forEach(t => {
+        const card = document.createElement("div");
+        card.className = "card";
+
+        const mapsBtn = t.maps ? `<a href="${t.maps}" target="_blank" class="btn btn-maps">📍 Directions</a>` : "";
+        const hotelBtn = t.hotel ? (t.hotel.startsWith("http") ? `<a href="${t.hotel}" target="_blank" class="btn btn-hotel">🏨 Hotel Link</a>` : `<span class="btn btn-hotel">🏨 ${t.hotel}</span>`) : "";
+        const siteBtn = t.site ? `<a href="${t.site}" target="_blank" class="btn btn-site">🌐 Event Site</a>` : "";
+        const notes = t.notes ? `<div class="notes-box">ℹ️ ${t.notes}</div>` : "";
+
+        card.innerHTML = `
+          <div class="card-header">
+            <h2 class="card-title">${t.name}</h2>
+            <span class="team-tag">${t.team}</span>
+          </div>
+          <div class="meta-row">
+            <div class="meta-item">📅 ${t.date}</div>
+            <div class="meta-item">📍 ${t.location || 'TBD'}</div>
+          </div>
+          ${notes}
+          <div class="btn-group">
+            ${mapsBtn}
+            ${hotelBtn}
+            ${siteBtn}
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    updateSpectatorBanner();
+    render();
+  </script>
+</body>
+</html>
